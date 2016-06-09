@@ -35,7 +35,7 @@ php app, apache , mysql, nginx
 * Nginx.cong is changed at runntime with the help of Dockerfile written to create image of nginx load balancer.
 * These way we are achieving Load balancing between two apache instances and mysql.
 
-## COnfiguration :
+## Configuration :
 * Dockefile : Please refer Dockerfile at all folders, containing all configurations and dependencies required by the application.
 * Nginx.conf : The path of Nginx.conf file is /etc/nginx/nginx.conf , where all configurations are done.
   * Provided a block "server" and upstream under "http" block.
