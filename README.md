@@ -13,7 +13,7 @@ php app, apache , mysql, nginx
 * MySQL
 * Docker containerization
 * Docker compose
-* Nginx.
+* Nginx as load balancer.
 
 ## Deployment :
 * The php application is deployed over Docker Container.
@@ -29,3 +29,12 @@ php app, apache , mysql, nginx
 * There are communication between all containers via Container linking.
 * Nginx.cong is changed at runntime with the help of Dockerfile written to create image of nginx load balancer.
 * These way we are achieving Load balancing between two apache instances and mysql.
+
+## Steps to deploy this project :
+
+* Clone the repo to your machine
+* Go to folder where the docker-compose.yml file exist.
+* Run command : docker-compose -up -d
+* Which will run all the containers in sequence as mentioned in the docker-compose.yml file.
+* If the image is not present in the machine, it will try to pull the image form public docker hub, once the image is pulled successfully, it will run as a Docker container.
+
