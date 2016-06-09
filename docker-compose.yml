@@ -1,0 +1,33 @@
+version: '2'
+services:
+  mysql:
+    image: kailashv/php_mysql
+    ports:
+       - 3306:3306
+  
+  app_server1:
+    image: kailashv/php_app
+    ports: 
+       - 8081:80
+    links:
+       - mysql:mysql
+    depends_on:
+       - mysql
+
+  app_server2:
+    image: kailashv/php_app        
+    ports:
+       - 8082:80
+    links:
+       - mysql:mysql
+    depends_on:
+       - mysql
+ 
+  nginx:
+    image: kailashv/nginx_php
+    ports:
+       - 85:80
+    depends_on:
+       - mysql
+       - app_server1
+       - app_server2  
